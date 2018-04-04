@@ -1,5 +1,3 @@
-
-
 ## Mots Clés
 - Client Web
 - Module Symfony
@@ -89,13 +87,14 @@ REST [Representational State Transfer) a été crée en 2000 par Roy Fielding.
 
 **Fonctionnement :**
 
-//Insérer image 2.png
+![](https://github.com/A2Prosit/7-WebService/blob/Emilien/Images/2.PNG)
 
+![](https://s3-eu-west-1.amazonaws.com/sdz-upload/prod/upload/Screenshot%202016-01-06%2015.05.031.png)
 *Exemples*:
 
 - GET: /livre/SF/harrypotter/
 - DELETE: /livre/SF/harrypotter/2
-
+ 
 
 ##  API - SOAP :
 
@@ -114,8 +113,7 @@ SOAP [Simple Object Access Protocol] ou 'enveloppe' est :
 ⇒ Le langage **WSDL** (Web Service Definition Language) décrit l'interface au service, en utilisant XML, il fait passer ses entrées et les retours d'appel de service au Web. Il utilise les numéros de port pour définir la connexion au service web.
 
 **Fonctionnement** :
-
-//Insérer image ici
+![](https://github.com/A2Prosit/7-WebService/blob/Emilien/Images/1.PNG)
 
 ![](https://user.oc-static.com/files/202001_203000/202693.png)
 
@@ -159,5 +157,11 @@ MAIS :
 
 
 ⇒ En 2010, 75% des services web passaient par REST, contrairement à 15% de SOAP.
+
+
+## Framework & REST :
+
+
+## Rappels HTTP :
 
 
