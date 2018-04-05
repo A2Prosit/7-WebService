@@ -1,10 +1,10 @@
 ## Mots Clés
 - Client Web
 - Module Symfony
-- API Rest
-- Requête HTTP
-- Reponse HTTP
-- Laravel
+- API Rest : Representational State Transfer
+- Requête HTTP : Emise par le client
+- Reponse HTTP : Emise par le serveur
+- Laravel : Framework PHP : pour les artisants du web
 - PHP Web Service
 
 ## Contexte
@@ -82,7 +82,7 @@ REST [Representational State Transfer) a été crée en 2000 par Roy Fielding.
 **Entête de REST** :
 -   GET : Récupération
 -   POST: Ajout
--   PUT/PATCH: Modification
+-   PUT/PATCH: Modification ⇒ Le corps d'une requête PUT contient la nouvelle représentation de la ressource. Le corps d'une requête PATCH contient juste des instructions permettant au serveur d'effectuer la modification. CAD que PATCH ne peut pas créer une nouvelle ressource.
 -   DELETE: Suppression
 
 **Fonctionnement :**
@@ -160,8 +160,56 @@ MAIS :
 
 
 ## Framework & REST :
+https://github.com/CircleOfNice/DoctrineRestDriver
 
+**Module à installer:** composer require circle/doctrine-rest-driver
+- Configurer la database
+
+- Si on souhaite faire du PATCH à la place de PUT :
+⇒ doctrine:
+  dbal:
+    options:
+      use_patch: true
+
+- Configurer les routes de la manière suivante: `{apiHost}/{pathToApi}/{tableName}`
+	- Si PUT/PATCH ou Get (seul) : `/{id}`
+	- POST et GET (tous) reste sur la manière basique
+	
+**Comment ça marche:**
+- Utilise le JSON par défaut
+- Fait les bonnes réponses (cf HTTP)
+- Transforme les URL en requêtes
+- Utilisable via des fonctions doctrines, directement dans un contrôleur (cf ex - lien au dessus)
+
+## Framework & Laravel:
+https://github.com/dingo/api
+- 4600 étoiles sur Github
+- Valable à partir de la V5
+- Gestion authentification (HTTP...)
+- Transformation de la réponse via "fractal"
+- Pouvoir versionner son API
+- Pouvoir limiter l'accès à l'API à des heures
+- Permet d'effectuer des requêtes internes
+- Documentation détaillée
+
+**Module à installer**
+```
+composer require dingo/api
+```
+Toute la configuration :
+
+https://jolicode.com/blog/initialiser-rapidement-une-api-rest-avec-laravel
 
 ## Rappels HTTP :
+**Codes basiques HTTP :**
+- 100 : Afficher la suite de la requête
+- 200 :  OK
+- 300 : Redirection
+- 400 : Bad Request
+- 500 : Erreur interne du serveur
 
+https://fr.wikipedia.org/wiki/Liste_des_codes_HTTP
 
+- GET + PUT ⇒ 200
+- POST => 201
+- DELETE ⇒ 204
